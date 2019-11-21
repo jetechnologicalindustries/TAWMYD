@@ -1,0 +1,78 @@
+{{> navbar}}
+{{> alert}}
+{{> viewport}}
+
+<div id="content" class="container mt-3">
+<div class='p-4 bg-light'>
+  <h3>Add Member</h3>
+  <form id='addform' class="needs-validation" method="post" action="/jregistration/members/add/new">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputFirst">First Name</label>
+            <input type="text" class="form-control" name="first" id="inputFirst" placeholder="First Name">
+            <div class="help-block d-none">
+              Please enter a first name
+            </div>
+      </div>
+        <div class="form-group col-md-6">
+            <label for="inputLast">Last Name</label>
+            <input type="text" class="form-control" name="last" id="inputLast" placeholder="Last Name">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputCompany">Company</label>
+          <input type="text" class="form-control" name="com" id="inputCompany" placeholder="Company">
+
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" name="city" id="inputCity" placeholder="City">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputContact">Contact #</label>
+          <input type="number" class="form-control" name="contact" id="inputContact" placeholder="Contact #">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputAge">Age</label>
+          <input type="number" class="form-control" name="age" id="inputAge" placeholder="Age">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputDob">Date of Birth</label>
+          <input type="date" class="form-control" name="dob" id="inputDob" placeholder="Date of Birth">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputEmail">E-mail</label>
+          <input type="email" class="form-control" name="email" id="inputEmail" placeholder="E-mail">
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          All fields are double checked
+        </label>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="form-group col-xs-12 d-md-none">
+            <button type="reset" class="btn btn-danger pull-right" value="Reset">Reset</button>
+        </div>
+        <div class="form-group col-md-6">
+            <button id='addMember' type="submit" class="btn btn-primary pull-left">Add Member</button>
+        </div>
+        <div class="form-group col-md-6 d-none d-md-block text-right">
+            <button type="reset" class="btn btn-danger pull-right" value="Reset">Reset</button>
+        </div>
+
+      </div>
+  </form>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+</script>

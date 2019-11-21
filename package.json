@@ -1,0 +1,28 @@
+{
+  "name": "tawmyd",
+  "version": "1.0.0",
+  "description": "this app will make you drunk",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetechnologicalindustries/TAWMYD.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "RJustinEduardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jetechnologicalindustries/TAWMYD/issues"
+  },
+  "homepage": "https://github.com/jetechnologicalindustries/TAWMYD#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "moment": "^2.24.0",
+    "tynt": "^1.2.0"
+  }
+}
