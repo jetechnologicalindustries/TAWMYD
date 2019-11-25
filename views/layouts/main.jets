@@ -3,6 +3,7 @@
 
 <head>
 	<title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
 <!-- BOOTSTRAP BUNDLE -->
 	<link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css' />
 <!-- DATATABLE BUNDLE -->
@@ -14,10 +15,10 @@
 {{#if jets}}
   <link rel='stylesheet' type='text/css' href='/css/jetsStyle.css' />
 {{/if}}
-
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 
 <body class="bodyBg">

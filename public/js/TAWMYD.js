@@ -29,15 +29,71 @@ function changeCardSize() {
 
 };
 
+function newCard() {
+	let rand;
+	rand = Math.floor(Math.random() * totalCards) + 1;  
+	$('#cardText').text(cards[rand]); 
+};
+//end functions
+
+//swipe detect
+	document.addEventListener('touchstart', handleTouchStart, false);        
+	document.addEventListener('touchmove', handleTouchMove, false);
+
+	var xDown = null;                                                        
+	var yDown = null;
+
+	function getTouches(evt) {
+	  return evt.touches ||             // browser API
+	         evt.originalEvent.touches; // jQuery
+	}                                                     
+
+	function handleTouchStart(evt) {
+	    const firstTouch = getTouches(evt)[0];                                      
+	    xDown = firstTouch.clientX;                                      
+	    yDown = firstTouch.clientY;                                      
+	};                                                
+
+	function handleTouchMove(evt) {
+	    if ( ! xDown || ! yDown ) {
+	        return;
+	    }
+
+	    var xUp = evt.touches[0].clientX;                                    
+	    var yUp = evt.touches[0].clientY;
+
+	    var xDiff = xDown - xUp;
+	    var yDiff = yDown - yUp;
+
+	    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+	        if ( xDiff > 0 ) {
+	            /* left swipe */ 
+	            $('#cardText').text('You swiped left'); 
+	        } else {
+	            /* right swipe */
+	            $('#cardText').text('You swiped right'); 
+	        }                       
+	    } else {
+	        if ( yDiff > 0 ) {
+	            /* up swipe */ 
+	            $('#cardText').text('You swiped up'); 
+	        } else { 
+	            /* down swipe */
+	            $('#cardText').text('You swiped down'); 
+	        }                                                                 
+	    }
+	    /* reset values */
+	    xDown = null;
+	    yDown = null;                                             
+	};
+
+//end swipe detect
+
 $(window).resize(function(){
     changeCardSize();
 });
 
 $(document).ready(function () {
 	changeCardSize();
-	let totalCards;
-	let rand;
-	totalCards = cards[0];
-	rand = Math.floor(Math.random() * totalCards) + 1;  
-	$('#cardText').text(cards[rand]); 
+	newCard();
 });
