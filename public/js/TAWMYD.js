@@ -34,6 +34,7 @@ $(window).resize(function(){
 });
 
 $(document).ready(function () {
+	changeCardSize();
 	let totalCards;
 	let rand;
 	totalCards = cards[0];
