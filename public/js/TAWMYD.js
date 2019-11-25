@@ -34,6 +34,15 @@ function newCard() {
 	rand = Math.floor(Math.random() * totalCards) + 1;  
 	$('#cardText').text(cards[rand]); 
 };
+
+function swipedLorR() {
+	$('#mainCard').toggleClass('flip');
+	let check;
+	check = $('#mainCard').hasClass('flip');
+	if(check===true){
+		newCard();
+	};
+};
 //end functions
 
 //swipe detect
@@ -68,12 +77,10 @@ function newCard() {
 	    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
 	        if ( xDiff > 0 ) {
 	            /* left swipe */ 
-	            $('#cardText').text('You swiped left');
-	            $('#mainCard').toggleClass('flip'); 
+	            swipedLorR();
 	        } else {
 	            /* right swipe */
-	            $('#cardText').text('You swiped right'); 
-	            $('#mainCard').toggleClass('flip');
+	            swipedLorR();
 	        }                       
 	    } else {
 	        if ( yDiff > 0 ) {
