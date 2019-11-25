@@ -98,6 +98,12 @@ function swipedLorR() {
 
 //end swipe detect
 
+$('#mainCard').mouseenter(function() {
+	console.log('mouse leave')
+	newCard();
+});
+
+
 $(window).resize(function(){
     changeCardSize();
 });
