@@ -1,7 +1,37 @@
+<script type='text/javascript'>
+  let fulldata = [];
+  fulldata = ({{{fulldata}}}); 
+  console.log(fulldata);
+  console.log('Settings:');
+  console.log('Color Theme: '+fulldata["settings"]["colorTheme"]);
+  console.log('Dice: '+fulldata["settings"]["dice"]);
+  console.log('Sounds: '+fulldata["settings"]["sound"]);
+  console.log('Animation: '+fulldata["settings"]["animation"]);
+
+  let cards = [];
+  cards = fulldata["cards"];
+  for(let i = 0; i < cards.length; i++){
+	console.log(i +'. '+ cards[i]);
+   }
+</script>
 
 {{> navbar}}
 
 
-<script type="text/javascript">
+<div class="container h-100">
+	<div class="container h-100 ">
+		<div class="flip-container mx-auto" ontouchstart="this.classList.toggle('hover');" id="mainCard">
+			<div class="flipper">
+				<div class="front" id="frontCard">
+					
+				</div>
+				<div class="back" id="backCard">
+					<div id="cardText">
+						Everyone must drink twice
+					</div>
+				</div>
+			</div>
+		</div>
 
-</script>
+	</div>
+</div>

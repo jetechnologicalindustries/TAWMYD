@@ -64,17 +64,22 @@ app.use(express.urlencoded({extended: false}));
 app.get('/favicon.ico', (req, res) => res.status(204));
 //homepage route
 app.get('/', function(req,res){
-	res.render('index', { 
-		alertMsg: undefined,
-		title: 'T A W M Y D',
-		titleurl: '/',
-		navtitle: 'TAWMYD',
-		link1: 1,
-		link1url: '/',
-  		link1name: 'Home',
-  		link8: 1,
-		link8url: '/jetservices',
-		link8name: 'JET Services'
+	fs.readFile('./files/demo.json', 'utf8', function(err, data) {
+		if (err) throw err;
+		let demo =  (data);
+		res.render('index', { 
+			title: 'T A W M Y D',
+			titleurl: '/',
+			navtitle: 'TAWMYD',
+			link1: 1,
+			link1url: '/',
+	  		link1name: 'Home',
+	  		link8: 1,
+			link8url: '/jetservices',
+			link8name: 'JET Services',
+			game: true,
+			fulldata: demo
+		});
 	});
 });
 

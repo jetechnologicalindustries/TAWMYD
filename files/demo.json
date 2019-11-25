@@ -6,7 +6,8 @@
       "animation": 0
    },
    "cardhistory": {
-      "totalcards": 9,
+      "totalusedcards": 9,
+      "usedcards":[1,2,3,4,5,6,7,8,9],
       "history": [
          "card description1",
          "card description2",
@@ -47,5 +48,27 @@
             "card description9"
          ]
       }
-   }
+   },
+   "cards" : [
+         19,
+         "card description1",
+         "card description2",
+         "card description3",
+         "card description4",
+         "card description5",
+         "card description6",
+         "card description7",
+         "card description8",
+         "card description9",
+         "card description10",
+         "card description11",
+         "card description12",
+         "card description13",
+         "card description14",
+         "card description15",
+         "card description16",
+         "card description17",
+         "card description18",
+         "card description19"
+      ]
 }

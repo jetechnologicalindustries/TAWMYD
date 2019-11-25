@@ -4,7 +4,8 @@
   "description": "this app will make you drunk",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
     "express-handlebars": "^3.1.0",
     "moment": "^2.24.0",
     "tynt": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
   }
 }

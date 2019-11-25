@@ -8,16 +8,21 @@
 <!-- DATATABLE BUNDLE -->
 	<link rel='stylesheet' type='text/css' href='/css/jquery.dataTables.min.css' />
 <!-- CUSTOM STYLESHEET -->
-	<link rel='stylesheet' type='text/css' href='/css/style.css' />
+{{#if game}}
+  <link rel='stylesheet' type='text/css' href='/css/style.css' />
+{{/if}}
+{{#if jets}}
+  <link rel='stylesheet' type='text/css' href='/css/jetsStyle.css' />
+{{/if}}
+
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body class="bodyBg">
 
     {{{body}}}
-
-<input type="hidden" name="alertCheck" id="alertCheck" value="{{alertMsg}}">
 
 <!-- JQUERY CDN BUNDLE -->
    <script type="text/javascript" src="/js/jquery.min.js"></script>
@@ -28,10 +33,18 @@
   <script type="text/javascript" src='/js/jquery.dataTables.min.js'></script>
 <!-- CUSTOM JS -->
   <script type="text/javascript" src='/js/main.js'></script>
+
+{{#if game}}
+<!-- CUSTOM GAME Script -->
+  <script type="text/javascript" src='/js/TAWMYD.js'></script>
+{{/if}}
+
 {{#if jets}}
 <!-- CUSTOM JETS Script -->
   <script type="text/javascript" src='/js/jetservices.js'></script>
 {{/if}}
+
+
 
 </body>
 
