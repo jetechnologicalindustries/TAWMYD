@@ -68,10 +68,12 @@ function newCard() {
 	    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
 	        if ( xDiff > 0 ) {
 	            /* left swipe */ 
-	            $('#cardText').text('You swiped left'); 
+	            $('#cardText').text('You swiped left');
+	            $('#mainCard').toggleClass('flip'); 
 	        } else {
 	            /* right swipe */
 	            $('#cardText').text('You swiped right'); 
+	            $('#mainCard').toggleClass('flip');
 	        }                       
 	    } else {
 	        if ( yDiff > 0 ) {
@@ -96,4 +98,5 @@ $(window).resize(function(){
 $(document).ready(function () {
 	changeCardSize();
 	newCard();
+
 });

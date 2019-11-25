@@ -3,13 +3,19 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  overscroll-behavior: none;
 }
 
 .bodyBg {
   background-color: #dedede;
+  overscroll-behavior: none;
 }
 
 /* FLIPPING CARDS */
+
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
