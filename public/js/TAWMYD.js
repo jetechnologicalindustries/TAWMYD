@@ -93,10 +93,10 @@ function swipedL() {
 	    } else {
 	        if ( yDiff > 0 ) {
 	            /* up swipe */ 
-	            $('#cardText').text('You swiped up'); 
+	            $('#cardText').text('You swiped up');
 	        } else { 
 	            /* down swipe */
-	            $('#cardText').text('You swiped down'); 
+	            $('#cardText').text('You swiped down');
 	        }                                                                 
 	    }
 	    /* reset values */
@@ -119,5 +119,10 @@ $(window).resize(function(){
 $(document).ready(function () {
 	changeCardSize();
 	newCard();
+	$('#overlay').addClass('d-block');
+	$("#overlay").click(function(){
+	  $('#overlay').removeClass('d-block');
+	  $('#overlay').addClass('d-none');
+	});
 
 });
