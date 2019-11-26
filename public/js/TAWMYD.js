@@ -35,12 +35,20 @@ function newCard() {
 	$('#cardText').text(cards[rand]); 
 };
 
-function swipedLorR() {
-	$('#mainCard').toggleClass('flip');
+function swipedR() {
+	let check;
+	check = $('#mainCard').hasClass('flip');
+	if(check===false){
+		$('#mainCard').addClass('flip');
+		newCard();
+	};
+};
+
+function swipedL() {
 	let check;
 	check = $('#mainCard').hasClass('flip');
 	if(check===true){
-		newCard();
+		$('#mainCard').removeClass('flip');
 	};
 };
 //end functions
@@ -77,10 +85,10 @@ function swipedLorR() {
 	    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
 	        if ( xDiff > 0 ) {
 	            /* left swipe */ 
-	            swipedLorR();
+	            swipedL();
 	        } else {
 	            /* right swipe */
-	            swipedLorR();
+	            swipedR();
 	        }                       
 	    } else {
 	        if ( yDiff > 0 ) {
