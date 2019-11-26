@@ -1,38 +1,56 @@
+function changeTextSize() {
+	let x,y,z;
+	x = $("#mainCard").width();
+	y = $("#mainCard").height();
+	z = x + y;
+	console.log('x: '+ x);
+	console.log('y: '+ y);
+	console.log('Total: '+ z);
+	if (z<1000) {
+		if (z<900) {
+			if (z<700) {
+				$("#cardText").css("fontSize", "20px");
+				console.log('Font Size: 20px');
+			} else {
+				$("#cardText").css("fontSize", "30px");
+				console.log('Font Size: 30px');
+			};
+		} else {
+			$("#cardText").css("fontSize", "40px");
+			console.log('Font Size: 40px');
+		};
+	} else {
+		$("#cardText").css("fontSize", "50px");
+		console.log('Font Size: 50px');
+	};
+};
+
+
 function changeCardSize() {
 		if(window.innerWidth > window.innerHeight){
 			//landscape
 			console.log('LANDSCAPE MODE');
-			let x;
-			let y;
-			x = $("#mainCard").width();
-			y = $("#mainCard").height();
 			$('#mainCard').addClass('w-50');
 			$('#frontCard').addClass('w-100');
 			$('#backCard').addClass('w-100');
-			console.log('x: '+ x);
-			console.log('y: '+ y);
-
+			changeTextSize();
 		} else {
 			//portrait
 			console.log('PORTRAIT MODE');
-			let x;
-			let y;
-			x = $("#mainCard").width();
-			y = $("#mainCard").height();
 			$('#mainCard').removeClass('w-50');
 			$('#frontCard').removeClass('w-100');
 			$('#backCard').removeClass('w-100');
-			console.log('x: '+ x);
-			console.log('y: '+ y);
-			
+			changeTextSize();
 		};
-
 };
+
 
 function newCard() {
 	let rand;
 	rand = Math.floor(Math.random() * totalCards) + 1;  
-	$('#cardText').text(cards[rand]); 
+	$('#cardText').text(cards[rand]);
+	$("#cardText").fadeTo(1, 0.0);
+	$("#cardText").fadeTo(1000, 1.0); 
 };
 
 function swipedR() {
@@ -49,6 +67,8 @@ function swipedL() {
 	check = $('#mainCard').hasClass('flip');
 	if(check===true){
 		$('#mainCard').removeClass('flip');
+		$("#mainCard").fadeTo(500, 0.5);
+		$("#mainCard").fadeTo(500, 1.0);
 	};
 };
 //end functions
@@ -97,6 +117,9 @@ function swipedL() {
 	        } else { 
 	            /* down swipe */
 	            $('#overlay').addClass('d-block');
+	            $("#overlay").fadeTo(1, 0.0);
+            	$("#mainCard").fadeTo(1000, 0.2);
+            	$("#overlay").fadeTo(1000, 1.0);
 	        }                                                                 
 	    }
 	    /* reset values */
@@ -119,10 +142,15 @@ $(window).resize(function(){
 $(document).ready(function () {
 	changeCardSize();
 	newCard();
+	$('#mainCard').removeClass('d-none');
+	$("#mainCard").fadeTo(1000, 0.2);
 	$('#overlay').addClass('d-block');
+	$("#overlay").fadeTo(1, 0.0);
+	$("#overlay").fadeTo(1000, 1.0);
 	$("#overlay").click(function(){
 		$('#overlay').removeClass('d-block');
 		$('#overlay').addClass('d-none');
+		$("#mainCard").fadeTo(1000, 1.0);
 	});
 
 });

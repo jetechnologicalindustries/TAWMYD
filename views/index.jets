@@ -27,7 +27,7 @@
 
 <div class="container h-100">
 	<div class="container h-100 ">
-		<div class="flip-container mx-auto" id="mainCard">
+		<div class="flip-container mx-auto d-none" id="mainCard">
 			<div class="flipper">
 				<div class="front" id="frontCard">
 					
