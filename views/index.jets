@@ -45,10 +45,18 @@
 
 <div id="overlay">
   <div id="overlayText" class="text-center">
-  	Swipe Right to flip card 
-  	<br> 
-  	Swipe Left to unflip card 
+  	Swipe Right 
   	<br>
+  	to flip card
+  	<br><br>
+  	Swipe Left 
+  	<br>
+  	to unflip card
+  	<br><br>
+  	Swipe down
+  	<br>
+  	to display instructions
+  	<br><br>
   	<br>
   	<span class="blinking">Tap to continue</span>
   </div>
