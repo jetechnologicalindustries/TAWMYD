@@ -139,10 +139,7 @@ function swipedL() {
 
 //end swipe detect
 
-$('#mainCard').mouseenter(function() {
-	console.log('mouse leave')
-	newCard();
-});
+
 
 
 $(window).resize(function(){
@@ -175,10 +172,15 @@ if (isMobile === true) {
 	let m;
 	m = 'Mobile Version';
 	$('#mobileText').text(m);
+	$(mainCard).unbind('mouseenter mouseleave')
 } else {
 	let m;
 	m = 'Web Version';
 	$('#mobileText').text(m);
+	$('#mainCard').mouseenter(function() {
+		console.log('mouse leave')
+		newCard();
+	});
 };
 
 console.log(isMobile)
