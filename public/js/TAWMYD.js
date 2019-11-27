@@ -102,6 +102,8 @@ function showInstruct() {
 	$('#instructions').addClass('d-block');
 	$("#instructions").fadeTo(1, 0.0);
 	$("#instructions").fadeTo(1000, 1.0);
+	$("#mainCard").fadeTo(1000, 0.2);
+	$('#backToGame').addClass('d-block');
 };
 
 function showSettings() {		
@@ -116,6 +118,7 @@ function showMenu() {
 	$('#menu1').addClass('d-block');
 	$("#menu1").fadeTo(1, 0.0);
 	$("#menu1").fadeTo(1000, 1.0);
+	$("#mainCard").fadeTo(1000, 0.2);
 };
 	
 
@@ -185,6 +188,12 @@ function showMenu() {
 $("#instructions").click(function(){
 	changeCardSize();
 	$('#instructions').removeClass('d-block');
+	$("#mainCard").fadeTo(1000, 1.0);
+	isMenuOn = false;
+});
+
+$("#backToGame").click(function(){
+	$('#menu1').removeClass('d-block');
 	$("#mainCard").fadeTo(1000, 1.0);
 	isMenuOn = false;
 });

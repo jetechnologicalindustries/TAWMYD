@@ -56,6 +56,7 @@
 </div>
 
 <div id='menu1' class="overlay">
+  <div id='backToGame' class="menuBack d-none">Back</div><br>
   <div class="text-center overlayText">
 	  <div class="text-center menuTitle" id='menuTitle'>This App Will<br>Make You Drunk</div><br>
 	  <div class="text-center menuOption mBlinking" id='menu1option1'>Quick Start </div><br>
