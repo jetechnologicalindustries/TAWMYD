@@ -173,6 +173,7 @@ if (isMobile === true) {
 	m = 'Mobile Version';
 	$('#mobileText').text(m);
 	$('#mainCard').unbind('mouseenter mouseleave')
+	$('div').addClass('noHover')
 } else {
 	let m;
 	m = 'Web Version';
