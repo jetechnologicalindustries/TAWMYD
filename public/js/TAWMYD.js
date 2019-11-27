@@ -8,9 +8,9 @@ function changeTextSize() {
 		$('#mainCard').addClass('w-75');
 		$('#frontCard').addClass('w-100');
 		$('#backCard').addClass('w-100');
-		a = 400;
-		b = 600;
-		c = 800;
+		a = 700;
+		b = 900;
+		c = 9900;
 	} else {
 		a = 750;
 		b = 950;
@@ -26,24 +26,24 @@ function changeTextSize() {
 	if (z<c) {
 		if (z<b) {
 			if (z<a) {
-				$("#cardText").css("fontSize", "5vw");
+				$("#cardText").css("fontSize", "4.5vw");
 				$("#cardText").css('margin-left', "5px");
 				$(".back").css('border', '7px solid #333');
 				console.log('Font Size: 20px');
 			} else {
-				$("#cardText").css("fontSize", "5.5vw");
+				$("#cardText").css("fontSize", "5vw");
 				$("#cardText").css('margin-left', "10px");
 				$(".back").css('border', '14px solid #333');
 				console.log('Font Size: 30px');
 			};
 		} else {
-			$("#cardText").css("fontSize", "6vw");
+			$("#cardText").css("fontSize", "5.5vw");
 			$("#cardText").css('margin-left', "15px");
 			$(".back").css('border', '20px solid #333');
 			console.log('Font Size: 40px');
 		};
 	} else {
-		$("#cardText").css("fontSize", "6.5vw");
+		$("#cardText").css("fontSize", "6vw");
 		$(".back").css('border', '20px solid #333');
 		console.log('Font Size: 50px');
 	};

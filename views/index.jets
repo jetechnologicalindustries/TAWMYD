@@ -42,7 +42,7 @@
 			</div>
  		</div>
 
-    <div id='desktopMenu'>
+    <div id='desktopMenu' class='d-none'>
       <div id='desktopOption1'>
       show menu
       </div>
