@@ -120,7 +120,7 @@ background: linear-gradient(#ffffff, #F4A460);
   background: #C0C0C0;
   border-radius: 25px;
   border: 10px solid;
-  font-size: 5vh;
+  font-size: 3vh;
   font-family: 'Bowlby One SC', cursive;
   padding: 10px;
   color: #000;
@@ -129,29 +129,19 @@ background: linear-gradient(#ffffff, #F4A460);
 .menuOption{
   border-radius: 25px;
   border: 10px solid;
-  font-size: 4vh;
+  font-size: 3vh;
   font-family: 'Bowlby One SC', cursive;
   padding: 10px;
   background: #C0C0C0;
   color: #000;
 }
 
-.menuOptionBlinking{
-  border-radius: 25px;
-  border: 10px solid;
-  font-size: 4vh;
-  font-family: 'Bowlby One SC', cursive;
-  animation:changingColor 4s infinite;
-  padding: 10px;
-  background: #C0C0C0;
-  color: #000;
-}
 
 .menuBack{
   position: absolute;
-  top: 10%;
-  left: 10%;
-  font-size: 5vh;
+  top: 5%;
+  left: 5%;
+  font-size: 2vh;
   font-family: 'Bowlby One SC', cursive;
   color: #000;
   border-radius: 25px;
@@ -179,11 +169,11 @@ background: linear-gradient(#ffffff, #F4A460);
 }
 
 @keyframes changingColor{
-  0%{  font-size: 4vh;  }
-  25%{  font-size: 3.5vh; }
-  50%{  font-size: 4vh; }
-  75%{  font-size: 3.5vh;  }
-  100%{ font-size: 4vh;  }
+  0%{  font-size: 3vh;  }
+  25%{  font-size: 2.5vh; }
+  50%{  font-size: 3vh; }
+  75%{  font-size: 2.5vh;  }
+  100%{ font-size: 3vh;  }
 }
 
 /*OVERLAY END*/
