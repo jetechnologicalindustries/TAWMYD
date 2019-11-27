@@ -97,6 +97,22 @@
   //cards setup
   let fulldata = [];
   fulldata = ({{{fulldata}}}); 
+ //card set up end
+console.log(fulldata);
+console.log('Settings:');
+console.log('Color Theme: '+fulldata["settings"]["colorTheme"]);
+console.log('Dice: '+fulldata["settings"]["dice"]);
+console.log('Sounds: '+fulldata["settings"]["sound"]);
+console.log('Animation: '+fulldata["settings"]["animation"]);
+  
+let cards = [];
+cards = fulldata["cards"];
+for(let i = 0; i < cards.length; i++){
+  console.log(i +'. '+ cards[i]);
+}
 
+let totalCards;
+totalCards = cards[0];
+//card set up end
    //end cards setup
 </script>
