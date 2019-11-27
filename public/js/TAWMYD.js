@@ -173,15 +173,16 @@ if (isMobile === true) {
 	m = 'Mobile Version';
 	$('#mobileText').text(m);
 	$('#mainCard').unbind('mouseenter mouseleave')
-	$('div').addClass('noHover')
+	$('.antiFlip').addClass('noHover')
 } else {
 	let m;
 	m = 'Web Version';
 	$('#mobileText').text(m);
 	$('#mainCard').mouseenter(function() {
-		console.log('mouse leave')
+		console.log('mouse enter')
 		newCard();
 	});
+
 };
 
 console.log(isMobile)

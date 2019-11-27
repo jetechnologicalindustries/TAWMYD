@@ -31,12 +31,12 @@
 		<div class="text-center" id="mobileText">			
 		</div>
 
-		<div class="flip-container mx-auto d-none" id="mainCard">
-			<div class="flipper">
-				<div class="front" id="frontCard">
+		<div class="flip-container mx-auto d-none antiFlip" id="mainCard">
+			<div class="flipper antiFlip">
+				<div class="front antiFlip" id="frontCard">
 					
 				</div>
-				<div class="back" id="backCard">
+				<div class="back antiFlip" id="backCard">
 					<div id="cardText">
 						Everyone must drink twice
 					</div>
