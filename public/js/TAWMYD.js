@@ -1,6 +1,34 @@
-let isMenuOn;
-let isMobile;
+ //card set up end
+console.log(fulldata);
+console.log('Settings:');
+console.log('Color Theme: '+fulldata["settings"]["colorTheme"]);
+console.log('Dice: '+fulldata["settings"]["dice"]);
+console.log('Sounds: '+fulldata["settings"]["sound"]);
+console.log('Animation: '+fulldata["settings"]["animation"]);
+  
+let cards = [];
+cards = fulldata["cards"];
+for(let i = 0; i < cards.length; i++){
+	console.log(i +'. '+ cards[i]);
+}
+
+let totalCards;
+totalCards = cards[0];
+//card set up end
+
+let isMenuOn,isMobile;
+let players,playersEntered;
+let round, roundTotal, longGame;
+players = [];
+playersEntered = 0;
+round = 0;
+roundTotal =0;
 isMobile = false;
+longGame = false;
+for (var i = players.length - 1; i >= 0; i--) {
+	console.log(players[i]);
+};
+
 
 function changeTextSize() {
 	let a,b,c,x,y,z;
@@ -90,6 +118,7 @@ function swipedL() {
 		let check;
 		check = $('#mainCard').hasClass('flip');
 		if(check===true){
+			if (longGame===true) {showRoundOverlay()};
 			$('#mainCard').removeClass('flip');
 			$("#mainCard").fadeTo(500, 0.5);
 			$("#mainCard").fadeTo(500, 1.0);
@@ -113,6 +142,28 @@ function showSettings() {
 	$("#settings").fadeTo(1000, 1.0);
 };
 
+function showNewGame() {		
+	isMenuOn = true;
+	$('#menu2').addClass('d-block');
+	$("#menu2").fadeTo(1, 0.0);
+	$("#menu2").fadeTo(1000, 1.0);
+};
+
+function showEnterName() {		
+	isMenuOn = true;
+	$('#enterName').addClass('d-block');
+	$("#enterName").fadeTo(1, 0.0);
+	$("#enterName").fadeTo(1000, 1.0);
+};
+
+function showPlayerList() {		
+	isMenuOn = true;
+	$('#listPlayers').addClass('d-block');
+	$("#listPlayers").fadeTo(1, 0.0);
+	$("#listPlayers").fadeTo(1000, 1.0);
+};
+
+
 function showMenu() {		
 	isMenuOn = true;
 	$('#menu1').addClass('d-block');
@@ -120,6 +171,20 @@ function showMenu() {
 	$("#menu1").fadeTo(1000, 1.0);
 	$("#mainCard").fadeTo(1000, 0.2);
 };
+
+function showRoundOverlay() {
+	let r;
+	isMenuOn = true;
+	round++;
+	roundTotal++;
+	if (round > players[0]) {
+		round = 1;
+	};
+	r = 'ROUND #' + roundTotal + '<br>It is ' + players[round] + "'s turn!<br><br><span class='blinking'>Tap to continue</span>" ;
+	$('#roundOverlay').addClass('d-block');
+	$('#roundOverlayText').html(r);
+};
+
 	
 
 //end functions
@@ -192,6 +257,14 @@ $("#instructions").click(function(){
 	isMenuOn = false;
 });
 
+
+
+$("#roundOverlay").click(function(){
+	$('#roundOverlay').removeClass('d-block');
+	$("#mainCard").fadeTo(1000, 1.0);
+	isMenuOn = false;
+});
+
 $("#backToGame").click(function(){
 	$('#menu1').removeClass('d-block');
 	$("#mainCard").fadeTo(1000, 1.0);
@@ -204,17 +277,67 @@ $("#menu1option1").click(function(){
 });
 
 $("#menu1option2").click(function(){
-	$('#menu1option2').text('Coming Soon!');
-	$('#menu1option2').delay(1000).fadeOut();
+	$('#menu1').removeClass('d-block');
+	showNewGame();
 });
+
+//close player number -> enter player name
+$("#menu2option2").click(function(){
+	$('#menu2').removeClass('d-block');
+	players[0] = $('#playersNum').val();
+	console.log('Number of players: ' + players[0]);
+	$('#enterNameText').text('Enter name for Player 1');
+	showEnterName();
+});
+
+//entername
+$("#menu3option2").click(function(){
+	let p,x,t;
+	$('#menu3').removeClass('d-block');
+	playersEntered++;
+	players[playersEntered] = $('#playersName').val();
+	console.log('Player ' + playersEntered + ': ' + players[playersEntered]);
+	p = (playersEntered + 1);
+	x = ('Enter name for Player ' + p);
+	$('#enterNameText').text(x);
+	x = ('');
+	
+	if (playersEntered >= players[0]) {
+		t = '';
+		for (var i = players.length - 1; i >= 1; i--) {
+			t = i + ': ' +players[i] +'<br>' + t;
+		}
+		$('#listPlayersText').html(t);
+		$('#enterName').removeClass('d-block');
+		showPlayerList();
+	} else {
+		$('#playersName').val(x);
+		showEnterName();
+	};
+	
+});
+
+$("#menu4option2").click(function(){
+	$('#listPlayers').removeClass('d-block');
+	$("#mainCard").fadeTo(1000, 1.0);
+	longGame = true;
+	isMenuOn = false;
+	showRoundOverlay();
+});
+
 
 $("#menu1option3").click(function(){
 	$('#menu1').removeClass('d-block');
 	showSettings();
 });
 
-$("#backToMenu").click(function(){
+$(".backToMenu").click(function(){
 	$('#settings').removeClass('d-block');
+	$('#menu2').removeClass('d-block');
+	$('#enterName').removeClass('d-block');
+	$('#listPlayers').removeClass('d-block');
+	players[0] = undefined;
+	playersEntered = 0;
 	showMenu();
 });
 
@@ -252,6 +375,10 @@ $(document).ready(function () {
 			console.log('mouse enter')
 			newCard();
 		});
+				$('#mainCard').mouseleave(function() {
+			console.log('mouse leaves')
+			if (longGame===true) {showRoundOverlay()};
+		});
 		$('#instructionsText').html('Hover to the card to reveal it<br><br>Unhover to get a new card<br><br><span class="blinking">Click to continue</span>');
 
 	};
@@ -263,4 +390,10 @@ $(document).ready(function () {
     	changeCardSize();
 	});
 
+});
+
+//makeit unselectable
+$(document).bind('selectstart dragstart', function(e) {
+	  e.preventDefault();
+	  return false;
 });
