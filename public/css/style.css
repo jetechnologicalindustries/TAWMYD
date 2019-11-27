@@ -64,9 +64,9 @@
 
 /* back, initially hidden pane */
 .back {
-  background-image: url('/images/cardbottom.jpg');
-  background-position: right bottom;
-  background-size: cover;
+  background-image:  url('/images/logoBlack.png') , url('/images/cardbottom.jpg');
+  background-position: right bottom , left top;
+  background-size: 113px 110px, cover;
   background-repeat: no-repeat;
   border-radius: 25px;
   border: 20px solid;
@@ -75,6 +75,13 @@
   font-size: 2.5em;
   font-family: 'Bowlby One SC', cursive;
 }
+
+#cardText {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
 /* FLIPPING CARDS END */
 
 /*OVERLAY*/
