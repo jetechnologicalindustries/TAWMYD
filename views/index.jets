@@ -33,16 +33,24 @@
 
 		<div class="flip-container mx-auto d-none antiFlip" id="mainCard">
 			<div class="flipper antiFlip">
-				<div class="front antiFlip" id="frontCard">
-					
-				</div>
+				<div class="front antiFlip" id="frontCard"></div>
 				<div class="back antiFlip" id="backCard">
 					<div id="cardText">
 						you must not see this, if you do please report to the moderator
 					</div>
 				</div>
 			</div>
-		</div>
+ 		</div>
+
+    <div id='desktopMenu'>
+      <div id='desktopOption1'>
+      show menu
+      </div>
+      <div id='desktopOption2'>
+      show instructions
+      </div>
+    </div>
+
 
 	</div>
 </div>
@@ -57,7 +65,7 @@
 </div>
 
 <div id='settings' class="overlay">
-  <div id='backToMenu' class="menuBack">🢀</div><br>
+  <div id='backToMenu' class="menuBack">Back</div><br>
   <div class="text-center overlayText">
 	  <div class="text-center menuOption">Settings</div><br>
 	  <div class="text-center menuOption">Sorry, no options yet</div><br>
@@ -65,7 +73,7 @@
 </div>
 
 <div id='instructions' class="overlay">
-  <div class="text-center overlayText">
+  <div id='instructionsText' class="text-center overlayText">
   	Swipe Right to show card
   	<br><br>
   	Swipe Left to get a new card

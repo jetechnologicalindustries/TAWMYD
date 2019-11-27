@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
 
- html, body {
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -34,7 +34,7 @@ background: linear-gradient(#ffffff, #F4A460);
 }*/
 
 .flip-container, .front, .back {
-  margin-top: 3vh;
+  margin-top: 8vh;
   width: 67vw;
   height: 60vh;
 }
@@ -179,5 +179,9 @@ background: linear-gradient(#ffffff, #F4A460);
 /*OVERLAY END*/
 
 /*TEXT FORMAT*/
+/*DESKTOP*/
+#desktopMenu{
+  display: none;
+}
 
 /*TEXT FORMAT END*/
