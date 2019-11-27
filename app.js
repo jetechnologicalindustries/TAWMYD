@@ -12,23 +12,6 @@ const hbs = exphbs.create({
 const port = process.env.PORT || 1108;
 const version = "1.0.0.1";
 
-//db start
-// const couch = new NodeCouchDB({
-// 	auth: {
-// 		user: 'admin',
-// 		password: 'admin'
-// 	}
-// });
-
-// const dbName = 'jregistration';
-// const viewUrl = '_design/all_members/_view/all';
-
-// console.log('Checking database connection...')
-// couch.listDatabases().then(function(dbs){
-// 	console.log(dbs);
-// 	console.log('Database connection successful.');
-// });
-//db end
 
 const app = express();
 

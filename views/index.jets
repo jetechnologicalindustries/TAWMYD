@@ -22,7 +22,7 @@
    //end cards setup
 </script>
 
-{{> navbar}}
+
 
 
 <div class="container h-100">
@@ -49,19 +49,14 @@
 
 <div id="overlay">
   <div id="overlayText" class="text-center">
-  	Swipe Right 
-  	<br>
-  	to flip card
+  	Swipe Right to show card
   	<br><br>
-  	Swipe Left 
-  	<br>
-  	to unflip card
+  	Swipe Left to get a new card
   	<br><br>
-  	Swipe down
-  	<br>
-  	to display instructions
+  	Swipe down to display instructions
   	<br><br>
-  	<br>
+  	Swipe up to display game menu
+  	<br><br>
   	<span class="blinking">Tap to continue</span>
   </div>
 </div>
