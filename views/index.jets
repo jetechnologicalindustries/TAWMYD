@@ -38,7 +38,7 @@
 				</div>
 				<div class="back antiFlip" id="backCard">
 					<div id="cardText">
-						Everyone must drink twice
+						you must not see this, if you do please report to the moderator
 					</div>
 				</div>
 			</div>
@@ -47,8 +47,25 @@
 	</div>
 </div>
 
-<div id="overlay">
-  <div id="overlayText" class="text-center">
+<div id='menu1' class="overlay">
+  <div class="text-center overlayText">
+	  <div class="text-center menuTitle" id='menuTitle'>This App Will<br>Make You Drunk</div><br>
+	  <div class="text-center menuOption mBlinking" id='menu1option1'>Quick Start </div><br>
+	  <div class="text-center menuOption mBlinking" id='menu1option2'>New Game</div><br>
+	  <div class="text-center menuOption mBlinking" id='menu1option3'>Settings</div><br>
+  </div>
+</div>
+
+<div id='settings' class="overlay">
+  <div id='backToMenu' class="menuBack">🢀</div><br>
+  <div class="text-center overlayText">
+	  <div class="text-center menuOption">Settings</div><br>
+	  <div class="text-center menuOption">Sorry, no options yet</div><br>
+  </div>
+</div>
+
+<div id='instructions' class="overlay">
+  <div class="text-center overlayText">
   	Swipe Right to show card
   	<br><br>
   	Swipe Left to get a new card

@@ -87,6 +87,29 @@ function swipedL() {
 		};
 	};
 };
+
+function showInstruct() {		
+	isMenuOn = true;
+	$('#instructions').addClass('d-block');
+	$("#instructions").fadeTo(1, 0.0);
+	$("#instructions").fadeTo(1000, 1.0);
+};
+
+function showSettings() {		
+	isMenuOn = true;
+	$('#settings').addClass('d-block');
+	$("#settings").fadeTo(1, 0.0);
+	$("#settings").fadeTo(1000, 1.0);
+};
+
+function showMenu() {		
+	isMenuOn = true;
+	$('#menu1').addClass('d-block');
+	$("#menu1").fadeTo(1, 0.0);
+	$("#menu1").fadeTo(1000, 1.0);
+};
+	
+
 //end functions
 
 //swipe detect
@@ -129,14 +152,15 @@ function swipedL() {
 	    } else {
 	        if ( yDiff > 0 ) {
 	            /* up swipe */ 
-	            
+	            if (isMenuOn === false) {
+	            	$("#mainCard").fadeTo(1000, 0.2);
+	            	showMenu();
+	            };
 	        } else { 
 	            /* down swipe */
 	            if (isMenuOn === false) {
-		            $('#overlay').addClass('d-block');
-		            $("#overlay").fadeTo(1, 0.0);
 	            	$("#mainCard").fadeTo(1000, 0.2);
-	            	$("#overlay").fadeTo(1000, 1.0);
+	            	showInstruct();
 	            };
 	        }                                                                 
 	    }
@@ -147,8 +171,39 @@ function swipedL() {
 
 //end swipe detect
 
+//click detect
 
+$("#instructions").click(function(){
+	$('#instructions').removeClass('d-block');
+	$('#instructions').addClass('d-none');
+	$("#mainCard").fadeTo(1000, 1.0);
+	isMenuOn = false;
+});
 
+$("#menu1option1").click(function(){
+	$('#menu1').removeClass('d-block');
+	$('#menu1').addClass('d-none');
+	showInstruct();
+});
+
+$("#menu1option2").click(function(){
+	$('#menu1option2').text('Coming Soon!');
+	$('#menu1option2').delay(1000).fadeOut();
+});
+
+$("#menu1option3").click(function(){
+	$('#menu1').removeClass('d-block');
+	$('#menu1').addClass('d-none');
+	showSettings();
+});
+
+$("#backToMenu").click(function(){
+	$('#settings').removeClass('d-block');
+	$('#settings').addClass('d-none');
+	showMenu();
+});
+
+//click detect end
 
 $(window).resize(function(){
     changeCardSize();
@@ -160,15 +215,7 @@ $(document).ready(function () {
 	isMenuOn = true;
 	$('#mainCard').removeClass('d-none');
 	$("#mainCard").fadeTo(1000, 0.2);
-	$('#overlay').addClass('d-block');
-	$("#overlay").fadeTo(1, 0.0);
-	$("#overlay").fadeTo(1000, 1.0);
-	$("#overlay").click(function(){
-		$('#overlay').removeClass('d-block');
-		$('#overlay').addClass('d-none');
-		$("#mainCard").fadeTo(1000, 1.0);
-		isMenuOn = false;
-	});
+	showMenu();
 
 	//mobile checker
 	var isMobile = false; //initiate as false

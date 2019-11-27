@@ -10,7 +10,8 @@
 }
 
 .bodyBg {
-  background-color: #dedede;
+/*  background-color: #dedede;*/
+background: linear-gradient(#ffffff, #F4A460);
   overscroll-behavior: none;
 }
 
@@ -90,7 +91,7 @@
 /* FLIPPING CARDS END */
 
 /*OVERLAY*/
-#overlay {
+.overlay {
   position: fixed;
   display: none;
   width: 100%;
@@ -104,7 +105,7 @@
   cursor: pointer;
 }
 
-#overlayText{
+.overlayText{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,6 +114,57 @@
   color: white;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+}
+
+.menuTitle{
+  background: #C0C0C0;
+  border-radius: 25px;
+  border: 10px solid;
+  font-size: 5vh;
+  font-family: 'Bowlby One SC', cursive;
+  padding: 10px;
+  color: #000;
+}
+
+.menuOption{
+  border-radius: 25px;
+  border: 10px solid;
+  font-size: 4vh;
+  font-family: 'Bowlby One SC', cursive;
+  padding: 10px;
+  background: #C0C0C0;
+  color: #000;
+}
+
+.menuOptionBlinking{
+  border-radius: 25px;
+  border: 10px solid;
+  font-size: 4vh;
+  font-family: 'Bowlby One SC', cursive;
+  animation:changingColor 4s infinite;
+  padding: 10px;
+  background: #C0C0C0;
+  color: #000;
+}
+
+.menuBack{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 5vh;
+  font-family: 'Bowlby One SC', cursive;
+  color: #000;
+  border-radius: 25px;
+  border: 10px solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #C0C0C0;
+}
+
+.mBlinking{
+  animation:changingColor 4s infinite;
 }
 
 .blinking{
@@ -124,6 +176,14 @@
   50%{  color: #fff }
   75%{  color:transparent;  }
   100%{ color: #fff;  }
+}
+
+@keyframes changingColor{
+  0%{  font-size: 4vh;  }
+  25%{  font-size: 3.5vh; }
+  50%{  font-size: 4vh; }
+  75%{  font-size: 3.5vh;  }
+  100%{ font-size: 4vh;  }
 }
 
 /*OVERLAY END*/
