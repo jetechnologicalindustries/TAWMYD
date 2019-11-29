@@ -1,7 +1,7 @@
 <div class="container h-100">
 	<div class="container h-100 ">
 		<br>
-		<div class="text-center" id="mobileText">			
+		<div class="text-center" id="roundText">			
 		</div>
 
 		<div class="flip-container mx-auto d-none antiFlip" id="mainCard">
@@ -74,8 +74,28 @@
 </div>
 
 <div id='roundOverlay' class="overlay">
-  <div id='roundOverlayText' class="text-center overlayText">
+  <div class="text-center overlayText">
+    <div id='roundOverlayText' class="text-center"></div><br>
+    <div class="text-center menuOption mBlinking" id='btnRoundContinue'>Continue</div><br>
+    <div class="text-center menuOption mBlinking" id='btnRoundPass'>Pass</div>
   </div>
+
+</div>
+
+<div id='passOverlay' class="overlay">
+  <div class="text-center overlayText">
+    <div id='passOverlayText' class="text-center"></div><br>
+    <div class="text-center menuOption mBlinking" id='btnPassContinue'>Next Player</div>
+  </div>   
+</div> 
+
+<div id='roundEndOverlay' class="overlay">
+  <div class="text-center overlayText">
+    <div id='roundEndOverlayText' class="text-center"></div><br>
+    <div class="text-center menuOption mBlinking" id='btnShowAgain'>Show Again</div><br>
+    <div class="text-center menuOption mBlinking" id='btnNextPlayer'>Next Player</div>
+</div> 
+  
 </div>
 
 <div id='instructions' class="overlay">

@@ -7,6 +7,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   overscroll-behavior: none;
+  font-family: 'Bowlby One SC', cursive;
 }
 
 .bodyBg {
@@ -34,7 +35,11 @@ background: linear-gradient(#ffffff, #F4A460);
 }*/
 
 .flip-container, .front, .back {
-  margin-top: 8vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   width: 67vw;
   height: 60vh;
 }
@@ -43,14 +48,12 @@ background: linear-gradient(#ffffff, #F4A460);
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
   position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -184,4 +187,8 @@ background: linear-gradient(#ffffff, #F4A460);
   display: none;
 }
 
+#roundText{
+  padding-top: 15%;
+  font-size: 150%;
+}
 /*TEXT FORMAT END*/
