@@ -35,7 +35,7 @@ background: linear-gradient(#ffffff, #F4A460);
 }*/
 
 .flip-container, .front, .back {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -54,7 +54,7 @@ background: linear-gradient(#ffffff, #F4A460);
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
@@ -157,7 +157,7 @@ background: linear-gradient(#ffffff, #F4A460);
 }
 
 .mBlinking{
-  animation:changingColor 4s infinite;
+  animation:changingSize 4s infinite;
 }
 
 .blinking{
@@ -171,12 +171,12 @@ background: linear-gradient(#ffffff, #F4A460);
   100%{ color: #fff;  }
 }
 
-@keyframes changingColor{
-  0%{  font-size: 3vh;  }
+@keyframes changingSize{
+  0%{  font-size: 2vh;  }
   25%{  font-size: 2.5vh; }
-  50%{  font-size: 3vh; }
+  50%{  font-size: 2vh; }
   75%{  font-size: 2.5vh;  }
-  100%{ font-size: 3vh;  }
+  100%{ font-size: 2vh;  }
 }
 
 /*OVERLAY END*/
