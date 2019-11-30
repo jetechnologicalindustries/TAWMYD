@@ -7,6 +7,7 @@ round = 0;
 roundTotal =0;
 isMobile = false;
 longGame = false;
+showAgain = false;
 for (var i = players.length - 1; i >= 0; i--) {
 	console.log(players[i]);
 };
