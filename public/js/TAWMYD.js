@@ -91,7 +91,9 @@ function swipedR() {
 		check = $('#mainCard').hasClass('flip');
 		if(check===false){
 			$('#mainCard').addClass('flip');
-			if (showAgain === false) {newCard();};
+			if (showAgain === false) {
+				newCard();
+			};
 		};	
 	}; 
 };

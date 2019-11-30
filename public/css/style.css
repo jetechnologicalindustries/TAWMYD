@@ -55,8 +55,10 @@ background: linear-gradient(#ffffff, #F4A460);
 .front, .back {
   backface-visibility: hidden;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
 /* front pane, placed above back */
@@ -68,6 +70,10 @@ background: linear-gradient(#ffffff, #F4A460);
   border: 20px solid;
   /* for firefox 31 */
   transform: rotateY(0deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
 /* back, initially hidden pane */
@@ -83,6 +89,10 @@ background: linear-gradient(#ffffff, #F4A460);
   padding: 10px;
   font-size: 2.5em;
   font-family: 'Bowlby One SC', cursive;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
 #cardText {
